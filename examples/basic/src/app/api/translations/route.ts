@@ -1,6 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
-import { getUserLanguageFromRequest } from "nextjs-translations";
+import { translations } from "@/translations";
+import { TranslationRoute } from "nextjs-translations";
 
-export async function GET(req: NextRequest) {
-  return NextResponse.json({ 'text': getUserLanguageFromRequest() })
-}
+export const GET = TranslationRoute(translations)
