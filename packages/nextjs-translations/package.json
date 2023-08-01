@@ -17,9 +17,11 @@
   },
   "dependencies": {
     "accept-language-parser": "^1.5.0",
-    "next": "^13.4.12"
+    "next": "^13.4.12",
+    "react": "^18.2.0"
   },
   "devDependencies": {
-    "@types/accept-language-parser": "^1.5.3"
+    "@types/accept-language-parser": "^1.5.3",
+    "@types/react": "^18.2.18"
   }
 }
