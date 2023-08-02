@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { LocaleContext } from "./localeContext";
 import { Locale } from "nextjs-translations";
@@ -8,14 +10,24 @@ export default function TranslationProvider(props: React.PropsWithChildren<{ loc
     translations: {},
   });
   React.useEffect(() => {
-    fetch(`/api/translations?lang=${props.locale}`)
-      .then((response) => response.json())
-      .then((translations) => {
-        setLocale({
-          id: props.locale,
-          translations,
-        });
-      });
+    (async () => {
+      const response = await fetch(`/api/translations?lang=${props.locale}`)
+      await response.json()
+
+      if (!response.ok) {
+        const fallbackResponse = await fetch('/api/translations/default')
+
+        if (!fallbackResponse.ok) {
+          return console.error('Could not fetch translations')
+        }
+
+        const fallbackData = await fallbackResponse.json()
+        return setLocale({ id: 'fallback', translations: fallbackData })
+      }
+
+      const returnedData = await response.json()
+      setLocale({ id: props.locale, translations: returnedData })
+    })()
   }, [props.locale])
   return <LocaleContext.Provider value={locale}>{props.children}</LocaleContext.Provider>;
 }

@@ -8,6 +8,7 @@ export default function Page() {
       <ul>
         <li>Language: en_us</li>
         <li>Example: {t('hello')}</li>
+        <li>Example (with variable): {t('hello-name', { name: 'World' })}</li>
       </ul>
     </main>
   )

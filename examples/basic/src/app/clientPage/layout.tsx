@@ -2,7 +2,7 @@
 
 import TranslationProvider from "nextjs-translations-client/dist/src/translationProvider"
 
-export default function ClientLayour({
+export default function ClientLayout({
   children
 }: {
   children: React.ReactNode

@@ -10,6 +10,7 @@ export default function Home() {
       <ul>
         <li>Language: {getUserLanguageFromRequest(translations)}</li>
         <li>Example: {t('hello')}</li>
+        <li>Example (with variable): {t('hello-name', { name: 'World' })}</li>
       </ul>
     </main>
   )

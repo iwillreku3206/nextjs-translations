@@ -52,4 +52,8 @@ export class Translations {
       return this.localeIds.includes(language.code) ? language.code : null
     }
   }
+
+  public getLocaleList(): string[] {
+    return this.localeIds
+  }
 }
