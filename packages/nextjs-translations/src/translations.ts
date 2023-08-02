@@ -1,5 +1,5 @@
 import { Language } from "accept-language-parser";
-import { Locale } from ".";
+import { Locale } from "./locale";
 
 export interface TranslationInitializationOptions {
   /**

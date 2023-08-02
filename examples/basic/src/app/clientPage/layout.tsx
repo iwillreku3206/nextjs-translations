@@ -1,6 +1,6 @@
 "use client"
 
-import { TranslationProvider } from "nextjs-translations"
+import TranslationProvider from "nextjs-translations-client/dist/src/translationProvider"
 
 export default function ClientLayour({
   children
@@ -8,7 +8,7 @@ export default function ClientLayour({
   children: React.ReactNode
 }) {
   return (
-    <TranslationProvider locale="en_us">
+    <TranslationProvider locale="test">
       {children}
     </TranslationProvider>
   )

@@ -1,6 +1,6 @@
-import { NextApiHandler } from "next";
 import { Translations } from "..";
 import { NextRequest, NextResponse } from "next/server";
+import alParser from 'accept-language-parser'
 
 export default function TranslationRoute(translations: Translations) {
   return (req: NextRequest) => {
@@ -9,10 +9,16 @@ export default function TranslationRoute(translations: Translations) {
       return NextResponse.json({ "error": "No locale provided" })
     }
 
-    const locale = translations.locales.find(loc => loc.id === lang)
+    const localeId = translations.findLanguage(alParser.parse(lang)[0])
+
+    if (!localeId) {
+      return NextResponse.json({ "error": "Locale not found" }, { status: 404 })
+    }
+
+    const locale = translations.locales.find((l) => l.id === localeId)
 
     if (!locale) {
-      return NextResponse.json({ "error": "Locale not found" })
+      return NextResponse.json({ "error": "Locale not found" }, { status: 404 })
     }
 
     return NextResponse.json(locale.translations)

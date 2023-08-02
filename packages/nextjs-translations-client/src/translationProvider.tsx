@@ -1,6 +1,6 @@
 import React from "react";
 import { LocaleContext } from "./localeContext";
-import { Locale } from "..";
+import { Locale } from "nextjs-translations";
 
 export default function TranslationProvider(props: React.PropsWithChildren<{ locale: string }>) {
   const [locale, setLocale] = React.useState<Locale>({
@@ -8,7 +8,7 @@ export default function TranslationProvider(props: React.PropsWithChildren<{ loc
     translations: {},
   });
   React.useEffect(() => {
-    fetch(`/locales/${props.locale}.json`)
+    fetch(`/api/translations?lang=${props.locale}`)
       .then((response) => response.json())
       .then((translations) => {
         setLocale({

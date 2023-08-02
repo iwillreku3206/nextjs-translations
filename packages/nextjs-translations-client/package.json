@@ -1,12 +1,7 @@
 {
-  "name": "nextjs-translations",
+  "name": "nextjs-translations-client",
   "version": "0.0.1",
-  "description": "An internationalization library built for the Next.js 13 `app` directory",
-  "keywords": [
-    "i18n",
-    "translation",
-    "nextjs"
-  ],
+  "description": "Client-side components for `nextjs-translations`",
   "author": "IWillRekU3206",
   "homepage": "https://github.com/iwillreku3206/nextjs-translations",
   "license": "MIT",
@@ -23,12 +18,11 @@
     "url": "https://github.com/iwillreku3206/nextjs-translations/issues"
   },
   "dependencies": {
-    "accept-language-parser": "^1.5.0",
     "next": "^13.4.12",
+    "nextjs-translations": "^0.0.1",
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@types/accept-language-parser": "^1.5.3",
     "@types/react": "^18.2.18"
   }
 }
