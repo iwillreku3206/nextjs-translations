@@ -25,7 +25,6 @@ export default function TranslationProvider(props) {
                     return console.error('Could not fetch translations');
                 }
                 const fallbackData = yield fallbackResponse.json();
-                console.log('set locale');
                 return setLocale({ id: 'fallback', translations: fallbackData });
             }
             const returnedData = yield response.json();

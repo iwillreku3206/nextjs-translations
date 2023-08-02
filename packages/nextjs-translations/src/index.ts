@@ -1,14 +1,5 @@
-import { Translations } from "./translations"
-import { Locale, localeFromJSON } from "./locale"
-import { getUserLanguageFromRequest } from "./server/getUserLanguage"
-import getT from "./server/t"
-import TranslationRoute from "./server/translationRoute"
-
-export {
-  Translations,
-  Locale,
-  localeFromJSON,
-  getUserLanguageFromRequest,
-  getT,
-  TranslationRoute,
-}
+export { Translations } from "./translations"
+export { Locale, localeFromJSON } from "./locale"
+export { getUserLanguageFromRequest } from "./server/getUserLanguage"
+export { default as getT } from "./server/t"
+export { default as TranslationRoute } from "./server/translationRoute"

@@ -1,6 +1,6 @@
 "use client"
 
-import t from "nextjs-translations-client/dist/src/t"
+import { t } from "nextjs-translations-client"
 
 export default function Page() {
   return (

@@ -1,6 +1,5 @@
 import { translations } from '../translations'
-import { getUserLanguageFromRequest } from 'nextjs-translations/dist/server/getUserLanguage'
-import { getT } from 'nextjs-translations'
+import { getUserLanguageFromRequest, getT } from 'nextjs-translations'
 
 export default function Home() {
   const t = getT(translations)

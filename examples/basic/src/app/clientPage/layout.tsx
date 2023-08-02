@@ -1,6 +1,6 @@
 "use client"
 
-import TranslationProvider from "nextjs-translations-client/dist/src/translationProvider"
+import { TranslationProvider } from "nextjs-translations-client"
 
 export default function ClientLayout({
   children
