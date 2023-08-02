@@ -4,6 +4,11 @@ import React from "react";
 import { LocaleContext } from "./localeContext";
 import { Locale } from "nextjs-translations";
 
+/**
+ *  @function TranslationProvider
+ *  Provides the locale context to the application. Required for client-side `t`. Place in a client-side layout component.
+ *  @param locale The locale to use
+ */
 export default function TranslationProvider(props: React.PropsWithChildren<{ locale: string }>) {
   const [locale, setLocale] = React.useState<Locale>({
     id: 'en_us',

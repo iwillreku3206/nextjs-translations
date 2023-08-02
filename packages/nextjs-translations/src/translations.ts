@@ -13,11 +13,47 @@ export interface TranslationInitializationOptions {
   defaultLocale?: string;
 }
 
+/**
+  * @class
+  * A class to manage translations in your Next.js application
+  *
+  * @example
+  * ```ts
+  * import { Translations, localeFromJSON } from "nextjs-translations";
+  * export const translations = new Translations({
+  *   locales: [
+  *     localeFromJSON('en', {
+  *       'hello': 'Hello!',
+  *       'hello-name': 'Hello, %%name%%!',
+  *     })
+  *   ]
+  * })
+  * ```
+  */
 export class Translations {
   public locales: Locale[];
   public defaultLocale: string;
   private localeIds: string[]
   _instance: Translations;
+
+  /**
+    * @constructor
+    * @param options The options for the translations instance
+    * @see TranslationInitializationOptions
+    * @example
+    * ```ts
+    * import { Translations, localeFromJSON } from "nextjs-translations";
+    * export const translations = new Translations({
+    *   locales: [
+    *     localeFromJSON('en', {
+    *       'hello': 'Hello!',
+    *       'hello-name': 'Hello, %%name%%!',
+    *     })
+    *   ],
+    *   defaultLocale: 'en'
+    * })
+    * ```
+    */
 
   public constructor(options: TranslationInitializationOptions) {
     if (!options.locales || options.locales.length === 0) {
@@ -38,6 +74,13 @@ export class Translations {
     this._instance = this;
   }
 
+  /**
+    * @function
+    * Finds a locale from a language object (from accept-language-parser)
+    * @param language The language object
+    * @returns The locale ID or null if not found
+    *
+    */
   public findLanguage(language: Language) {
     if (!language.region) {
       return this.localeIds.includes(language.code) ? language.code : null
@@ -53,6 +96,10 @@ export class Translations {
     }
   }
 
+  /**
+    * @function
+    * Returns an array of all the locale IDs
+    */
   public getLocaleList(): string[] {
     return this.localeIds
   }

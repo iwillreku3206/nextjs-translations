@@ -2,6 +2,20 @@ import { Locale, Translations } from "..";
 import { NextRequest, NextResponse } from "next/server";
 import alParser from 'accept-language-parser'
 
+/**
+  * @function
+  * Adds various routes to your Next.js application to allow you to access your translations from the client-side
+  * @param translations The translations instance
+  * @returns A Next.js route handler
+  * @example
+  * `app/api/[...translations]/route.ts`
+  * ```ts
+  * import { TranslationRoute } from 'nextjs-translations'
+  * import { translations } from '@/translations'
+  *
+  * export const GET = TranslationRoute(translations)
+  * ````
+  */
 export default function TranslationRoute(translations: Translations) {
   return (req: NextRequest, context: { params: { translations: string[] } }) => {
     const route = context.params.translations
