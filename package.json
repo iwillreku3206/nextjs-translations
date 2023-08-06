@@ -8,5 +8,10 @@
   "dependencies": {},
   "devDependencies": {
     "lerna": "^7.1.4"
+  },
+  "scripts": {
+    "build:backend": "npm run build -w nextjs-translations",
+    "build:frontend": "npm run build -w nextjs-translations-frontend",
+    "build": "npm run build:backend && npm run build:frontend"
   }
 }
