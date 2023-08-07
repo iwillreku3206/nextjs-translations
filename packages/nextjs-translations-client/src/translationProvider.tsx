@@ -1,38 +1,38 @@
-"use client"
+"use client";
 
 import React from "react";
 import { LocaleContext } from "./localeContext";
 import { Locale } from "nextjs-translations";
 
 /**
- *  @function TranslationProvider
- *  Provides the locale context to the application. Required for client-side `t`. Place in a client-side layout component.
- *  @param locale The locale to use
+ *	@function TranslationProvider
+ *	Provides the locale context to the application. Required for client-side `t`. Place in a client-side layout component.
+ *	@param locale The locale to use
  */
 export default function TranslationProvider(props: React.PropsWithChildren<{ locale: string }>) {
-  const [locale, setLocale] = React.useState<Locale>({
-    id: 'en_us',
-    translations: {},
-  });
-  React.useEffect(() => {
-    (async () => {
-      const response = await fetch(`/api/translations?lang=${props.locale}`)
-      await response.json()
+	const [locale, setLocale] = React.useState<Locale>({
+		id: "en_us",
+		translations: {},
+	});
+	React.useEffect(() => {
+		(async () => {
+			const response = await fetch(`/api/translations?lang=${props.locale}`);
+			await response.json();
 
-      if (!response.ok) {
-        const fallbackResponse = await fetch('/api/translations/default')
+			if (!response.ok) {
+				const fallbackResponse = await fetch("/api/translations/default");
 
-        if (!fallbackResponse.ok) {
-          return console.error('Could not fetch translations')
-        }
+				if (!fallbackResponse.ok) {
+					return console.error("Could not fetch translations");
+				}
 
-        const fallbackData = await fallbackResponse.json()
-        return setLocale({ id: 'fallback', translations: fallbackData })
-      }
+				const fallbackData = await fallbackResponse.json();
+				return setLocale({ id: "fallback", translations: fallbackData });
+			}
 
-      const returnedData = await response.json()
-      setLocale({ id: props.locale, translations: returnedData })
-    })()
-  }, [props.locale])
-  return <LocaleContext.Provider value={locale}>{props.children}</LocaleContext.Provider>;
+			const returnedData = await response.json();
+			setLocale({ id: props.locale, translations: returnedData });
+		})();
+	}, [props.locale]);
+	return <LocaleContext.Provider value={locale}>{props.children}</LocaleContext.Provider>;
 }

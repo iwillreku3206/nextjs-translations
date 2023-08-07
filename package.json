@@ -5,13 +5,17 @@
     "packages/*",
     "examples/*"
   ],
-  "dependencies": {},
   "devDependencies": {
-    "lerna": "^7.1.4"
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0",
+    "eslint-plugin-react": "^7.33.1",
+    "lerna": "^7.1.4",
+    "prettier": "^3.0.1"
   },
   "scripts": {
     "build:backend": "npm run build -w nextjs-translations",
-    "build:frontend": "npm run build -w nextjs-translations-frontend",
-    "build": "npm run build:backend && npm run build:frontend"
+    "build:client": "npm run build -w nextjs-translations-client",
+    "build": "npm run build:backend && npm run build:client"
   }
 }
