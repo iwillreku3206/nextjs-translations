@@ -10,14 +10,13 @@ on:
     types: [created]
 
 jobs:
-  build:
+  checkout:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm ci
 
   publish-npm:
     needs: build
@@ -28,10 +27,11 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
+      - run: npm ci -w nextjs-translations
       - run: npm publish -w nextjs-translations
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - run: npm ci -w nextjs-translations-client
       - run: npm publish -w nextjs-translations-client
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
