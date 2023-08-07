@@ -1,34 +1,38 @@
 {
-  "name": "nextjs-translations",
-  "version": "0.0.1",
-  "description": "An internationalization library built for the Next.js 13 `app` directory",
-  "keywords": [
-    "i18n",
-    "translation",
-    "nextjs"
-  ],
-  "author": "IWillRekU3206",
-  "homepage": "https://github.com/iwillreku3206/nextjs-translations",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iwillreku3206/nextjs-translations.git"
-  },
-  "scripts": {
-    "build": "tsc"
-  },
-  "bugs": {
-    "url": "https://github.com/iwillreku3206/nextjs-translations/issues"
-  },
-  "dependencies": {
-    "accept-language-parser": "^1.5.0",
-    "next": "^13.4.12",
-    "react": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/accept-language-parser": "^1.5.3",
-    "@types/react": "^18.2.18"
-  }
+	"name": "nextjs-translations",
+	"version": "0.0.1",
+	"description": "An internationalization library built for the Next.js 13 `app` directory",
+	"keywords": [
+		"i18n",
+		"translation",
+		"nextjs"
+	],
+	"author": "IWillRekU3206",
+	"homepage": "https://github.com/iwillreku3206/nextjs-translations",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/iwillreku3206/nextjs-translations.git"
+	},
+	"scripts": {
+		"build": "tsc",
+		"prepare": "npm run build"
+	},
+	"bugs": {
+		"url": "https://github.com/iwillreku3206/nextjs-translations/issues"
+	},
+	"dependencies": {
+		"accept-language-parser": "^1.5.0",
+		"next": "^13.4.12",
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@types/accept-language-parser": "^1.5.3",
+		"@types/react": "^18.2.18"
+	},
+	"files": [
+		"dist/**/*"
+	]
 }

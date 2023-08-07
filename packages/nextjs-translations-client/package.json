@@ -1,28 +1,32 @@
 {
-  "name": "nextjs-translations-client",
-  "version": "0.0.1",
-  "description": "Client-side components for `nextjs-translations`",
-  "author": "IWillRekU3206",
-  "homepage": "https://github.com/iwillreku3206/nextjs-translations",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iwillreku3206/nextjs-translations.git"
-  },
-  "scripts": {
-    "build": "tsc"
-  },
-  "bugs": {
-    "url": "https://github.com/iwillreku3206/nextjs-translations/issues"
-  },
-  "dependencies": {
-    "next": "^13.4.12",
-    "nextjs-translations": "^0.0.1",
-    "react": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.18"
-  }
+	"name": "nextjs-translations-client",
+	"version": "0.0.1",
+	"description": "Client-side components for `nextjs-translations`",
+	"author": "IWillRekU3206",
+	"homepage": "https://github.com/iwillreku3206/nextjs-translations",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/iwillreku3206/nextjs-translations.git"
+	},
+	"scripts": {
+		"build": "tsc",
+		"prepare": "npm run build"
+	},
+	"bugs": {
+		"url": "https://github.com/iwillreku3206/nextjs-translations/issues"
+	},
+	"dependencies": {
+		"next": "^13.4.12",
+		"nextjs-translations": "^0.0.1",
+		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"@types/react": "^18.2.18"
+	},
+	"files": [
+		"dist/**/*"
+	]
 }
