@@ -1,3 +1,4 @@
+/** @type { import("eslint").Linter.Config } */
 module.exports = {
 	"env": {
 		"browser": true,
@@ -48,5 +49,14 @@ module.exports = {
 			"error",
 			"always"
 		]
+	},
+	ignorePatterns: [
+		"node_modules/",
+		"dist/",
+	],
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
 	}
 };
