@@ -3,8 +3,7 @@
 	"private": true,
 	"type": "commonjs",
 	"workspaces": [
-		"packages/*",
-		"examples/*"
+		"packages/*"
 	],
 	"devDependencies": {
 		"@types/eslint": "^8.44.2",
