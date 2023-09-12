@@ -1,6 +1,6 @@
 {
 	"name": "nextjs-translations-client",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"description": "Client-side components for `nextjs-translations`",
 	"author": "IWillRekU3206",
 	"homepage": "https://github.com/iwillreku3206/nextjs-translations",
@@ -21,7 +21,7 @@
 	},
 	"dependencies": {
 		"next": "^13.4.12",
-		"nextjs-translations": "^0.0.2",
+		"nextjs-translations": "^0.1.0",
 		"react": "^18.2.0"
 	},
 	"devDependencies": {

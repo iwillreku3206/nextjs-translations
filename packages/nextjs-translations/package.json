@@ -1,6 +1,6 @@
 {
 	"name": "nextjs-translations",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"description": "An internationalization library built for the Next.js 13 `app` directory",
 	"keywords": [
 		"i18n",
