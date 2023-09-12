@@ -29,7 +29,8 @@ export default function getT(translations: Translations) {
 	function t(key: string, args?: { [key: string]: string }) {
 		const language = getUserLanguageFromRequest(translations);
 		const locale = translations.locales.find(locale => locale.id === language);
-		let value = locale?.translations[key] || key;
+		const defaultLocale = translations.locales.find(locale => locale.id === translations.defaultLocale);
+		let value = locale?.translations[key] || defaultLocale?.translations[key] || key;
 		if (!args) return value;
 		for (const arg of Object.keys(args)) {
 			value = value.replace(`%%${arg.trim()}%%`, args[arg]);
